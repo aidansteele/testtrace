@@ -12,7 +12,6 @@ on:
 env:
   HELLO: world
   GITHUB_CONTEXT: ${{ toJSON(github) }}
-  RUNNER_CONTEXT: ${{ toJSON(runner) }}
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,6 +24,7 @@ jobs:
     env:
       JOB_CONTEXT: ${{ toJSON(job) }}
       STEPS_CONTEXT: ${{ toJSON(steps) }}
+      RUNNER_CONTEXT: ${{ toJSON(runner) }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
